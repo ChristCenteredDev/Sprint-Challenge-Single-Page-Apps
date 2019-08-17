@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import CharacterCard from './CharacterCard';
+import styled from 'styled-components';
+
+const StyledDiv = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+`;
 
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
@@ -23,10 +30,10 @@ export default function CharacterList() {
   // console.log(data);
 
   return (
-    <section className='character-list grid-view'>
+    <StyledDiv>
       {data.map(obj => {
         return <CharacterCard key={obj.id} character={obj} />;
       })}
-    </section>
+    </StyledDiv>
   );
 }
