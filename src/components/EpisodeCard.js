@@ -6,20 +6,22 @@ const StyledDiv = styled.div`
   padding: 10px 0;
 `;
 
-const StyledIMG = styled.img`
-  width: 100%;
-`;
-
 const StyledH2 = styled.h2`
   font-size: 0.75rem;
+  margin-top: 0;
+`;
+
+const StyledH3 = styled.h3`
+  font-size: 0.65rem;
   margin-top: 0;
 `;
 
 export default function CharacterCard(props) {
   return (
     <StyledDiv>
-      <StyledIMG src={props.character.image} alt={props.character.name} />
-      <StyledH2>Name: {props.character.name}</StyledH2>
+      <StyledH2>Name: {props.episode.name}</StyledH2>
+      <StyledH3>Episode: {props.episode.episode}</StyledH3>
+      <StyledH3>Air Date: {props.episode.air_date}</StyledH3>
     </StyledDiv>
   );
 }
